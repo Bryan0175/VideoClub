@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
+:root {
+    --title-font: 'League Gothic', sans-serif;
+    --yellow: #FDB000;
+    --dark-blue: #161B3B;
+    --light-blue: #49C8A7;
+}
+
+.container_all {
+    width: 100%;
+    height: 100%;
+    min-height: calc(100vh - 58px);
+    position: relative;
+}
+
+.container_all::after {
+    content: '';
+    background: var(--yellow);
+    width: 35vw;
+    height: 45vh;
+    position: absolute;
+    top: 0;
+    clip-path: polygon(70% 0, 0 0, 0 100%);
+}
+
+.container_all::before {
+    content: '';
+    background: var(--yellow);
+    width: 30vw;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    clip-path: polygon(100% 0, 100% 0%, 100% 100%, 0 100%);
+}
+
+.container_form {
+    width: 68%;
+    margin: auto;
+    padding: 50px 0 0;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    width: auto;
+    padding: 20px 0;
+    letter-spacing: 1px;
+}
+
+.title h1 {
+    font-family: var(--title-font);
+    font-size: 30px;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.triangle {
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+    background: var(--yellow);
+    height: 35px;
+    width: 35px;
+}
+
+.cinta {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 300px;
+}
+
+.movie-img {
+    display: none;
+}
+
+.container_form .btn {
+    background: var(--dark-blue);
+    color: white;
+    border-radius: 5px;
+    width: 220px;
+    height: 35px;
+    margin: 0 auto 100px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    outline: none;
+    border: 1px solid black;
+    cursor: pointer;
+    /* background-color: transparent; */
+}
+
+.container_form .btn-edit{
+    margin: 0 auto;
+}
+
+.btn:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 7px;
+    left: 7px;
+    height: 100%;
+    background-color: #4993c89a;
+    z-index: -1;
+    transition: all 0.35s;
+    border-radius: inherit;
+}
+
+.btn:hover:after {
+    top: 0px;
+    left: 0px;
+}
+
+.container_form .btn .icon {
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+.add-form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.logo{
+    font-family: var(--title-font);
+    letter-spacing: 1px;
+    font-size: 25px;
+}
+
+@media screen and (min-width: 768px) {
+    .container_all {
+        height: 100vh;
+    }
+
+    .container_all::after {
+        width: 25vw;
+        height: 55vh;
+        clip-path: polygon(70% 0, 0 0, 0 100%);
+    }
+
+    .container_all::before {
+        clip-path: polygon(90% 0, 100% 0%, 100% 100%, 0 100%);
+    }
+
+    .title {
+        width: max-content;
+    }
+
+    .title h1 {
+        font-size: 40px;
+    }
+
+    .triangle {
+        height: 40px;
+        width: 40px;
+    }
+
+    .cinta {
+        width: 40vw;
+    }
+
+    .movie-img {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 40vw;
+    }
+
+    .container_form .btn {
+        width: 250px;
+        height: 40px;
+        margin: auto;
+    }
+
+    .btns-actions{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .add-form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 40px;
+        row-gap: 20px;
+        justify-content: center;
+    }
+
+    .add-form:nth-child(3) {
+        grid-column: span 2;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .cinta {
+        width: 35vw;
+    }
+
+    .movie-img {
+        width: 37vw;
+    }
+}
